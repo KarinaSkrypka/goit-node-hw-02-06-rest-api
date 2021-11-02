@@ -15,7 +15,9 @@ const {
   userPro,
   userBusiness,
 
+
   uploadAvatar,
+
 
 } = require("../../controllers/users");
 const guard = require("../../../helpers/guard");
@@ -23,7 +25,9 @@ const { Subscription } = require("../../../config/constants");
 const role = require("../../../helpers/role");
 const loginLimit = require("../../../helpers/rate-limit-login");
 
+
 const upload = require("../../../helpers/uploads");
+
 
 
 router.patch("/", guard, validateSubscriptionUser, updateSubscription);
@@ -42,8 +46,8 @@ router.post("/logout", guard, logout);
 
 router.get("/current", guard, current);
 
-
 router.patch("/avatar", guard, upload.single("avatarURL"), uploadAvatar);
+
 
 
 module.exports = router;

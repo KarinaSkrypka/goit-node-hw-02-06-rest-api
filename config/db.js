@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
+
 let uri;
 
 if (process.env.NODE_ENV == "test") {
@@ -8,6 +9,9 @@ if (process.env.NODE_ENV == "test") {
 } else {
   uri = process.env.URI_DB;
 }
+
+const uri = process.env.URI_DB;
+
 
 const uri = process.env.URI_DB;
 
@@ -25,6 +29,7 @@ if (process.env.NODE_ENV == "test") {
     console.log(`Mongoose connection error ${err.message}`);
   });
 }
+
 
 mongoose.connection.on("connected", () => {
   console.log("Mongoose connection to DB");
