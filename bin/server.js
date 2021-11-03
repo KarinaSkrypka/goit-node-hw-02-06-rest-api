@@ -1,6 +1,5 @@
 const db = require("../config/db");
 const app = require("../app");
-
 const mkdirp = require("mkdirp");
 require("dotenv").config();
 const UPLOAD_DIR = process.env.UPLOAD_DIR;
@@ -12,11 +11,6 @@ db.then(() => {
     await mkdirp(UPLOAD_DIR);
     await mkdirp(AVATAR_OF_USERS);
 
-
-const PORT = process.env.PORT || 3000;
-
-db.then(() => {
-  app.listen(PORT, () => {
     console.log(`Server running. Use our API on port: ${PORT}`);
   });
 }).catch((err) => {
